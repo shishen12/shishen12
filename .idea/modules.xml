@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fmmall/api/api.iml" filepath="$PROJECT_DIR$/fmmall/api/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fmmall/beans/beans.iml" filepath="$PROJECT_DIR$/fmmall/beans/beans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fmmall/common/common.iml" filepath="$PROJECT_DIR$/fmmall/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-parent/common/common (1).iml" filepath="$PROJECT_DIR$/maven-parent/common/common (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo1/demo (1) (com.example).iml" filepath="$PROJECT_DIR$/demo1/demo (1) (com.example).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fmmall/fmmall.iml" filepath="$PROJECT_DIR$/fmmall/fmmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ideaWorkplace.iml" filepath="$PROJECT_DIR$/.idea/ideaWorkplace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fmmall/mapper/mapper.iml" filepath="$PROJECT_DIR$/fmmall/mapper/mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-demo1/maven-demo1.iml" filepath="$PROJECT_DIR$/maven-demo1/maven-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-demo2/maven-demo2.iml" filepath="$PROJECT_DIR$/maven-demo2/maven-demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-parent/maven-parent.iml" filepath="$PROJECT_DIR$/maven-parent/maven-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-demo1/mybatis-demo1.iml" filepath="$PROJECT_DIR$/mybatis-demo1/mybatis-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-demo3/mybatis-demo3.iml" filepath="$PROJECT_DIR$/mybatis-demo3/mybatis-demo3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-demo4/mybatis-demo4.iml" filepath="$PROJECT_DIR$/mybatis-demo4/mybatis-demo4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fmmall/service/service.iml" filepath="$PROJECT_DIR$/fmmall/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-aop-demo1/spring-aop-demo1.iml" filepath="$PROJECT_DIR$/spring-aop-demo1/spring-aop-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-aop-demo2/spring-aop-demo2.iml" filepath="$PROJECT_DIR$/spring-aop-demo2/spring-aop-demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-demo1/spring-ioc-demo1.iml" filepath="$PROJECT_DIR$/spring-ioc-demo1/spring-ioc-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-demo2/spring-ioc-demo2.iml" filepath="$PROJECT_DIR$/spring-ioc-demo2/spring-ioc-demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mybatis/spring-mybatis.iml" filepath="$PROJECT_DIR$/spring-mybatis/spring-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-demo1/springboot-demo1.iml" filepath="$PROJECT_DIR$/springboot-demo1/springboot-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-ssm/springboot-ssm.iml" filepath="$PROJECT_DIR$/springboot-ssm/springboot-ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc-demo2/springmvc-demo2.iml" filepath="$PROJECT_DIR$/springmvc-demo2/springmvc-demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc-demo3/springmvc-demo3.iml" filepath="$PROJECT_DIR$/springmvc-demo3/springmvc-demo3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sss/ssm-demo1.iml" filepath="$PROJECT_DIR$/sss/ssm-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-demo1/ssm-demo1 (1).iml" filepath="$PROJECT_DIR$/ssm-demo1/ssm-demo1 (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/tkmapper-demo/tkmapper-demo.iml" filepath="$PROJECT_DIR$/tkmapper-demo/tkmapper-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ttt/ttt.iml" filepath="$PROJECT_DIR$/ttt/ttt.iml" />
+    </modules>
+  </component>
+</project>

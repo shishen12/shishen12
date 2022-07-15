@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                    http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    set注入-->
+    <bean id="student" class="com.qfedu.ioc.bean.Student">
+        <property name="stuNum" value="10002"/>
+        <property name="stuAge" value="18"/>
+        <property name="stuGender" value="女"/>
+        <property name="stuName" value="李斯"/>
+        <property name="enterenceTime">
+            <bean class="java.util.Date"/>
+        </property>
+        <property name="clazz" ref="clazz"/>
+
+        <property name="hobbies" value="旅游,电影"/>
+
+        <property name="sets">
+            <set>
+                <value>222</value>
+<!--                <ref></ref>-->
+            </set>
+        </property>
+
+        <property name="maps">
+            <map>
+                <entry>
+                    <key>
+                        <value>sss</value>
+                    </key>
+                    <value>ss11ss</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="clazz" class="com.qfedu.ioc.bean.Clazz">
+        <property name="classId" value="2010"/>
+        <property name="className" value="java2010"/>
+    </bean>
+<!--    <bean id="date" class="java.util.Date"/>-->
+
+<!--    构造器注入-->
+
+    <bean id="date" class="java.util.Date"></bean>
+    <bean id="student2" class="com.qfedu.ioc.bean.Student2">
+        <constructor-arg value="1001"/>
+        <constructor-arg value="张三"/>
+        <constructor-arg value="女"/>
+        <constructor-arg value="21"/>
+        <constructor-arg ref="date"/>
+        <constructor-arg ref="clazz"/>
+    </bean>
+
+<!--    scope="prototype" 多例模式 默认单例模式-->
+<!--    lazy-init="true" 开启懒汉模式 多例模式默认为懒汉模式-->
+    <bean id="book" class="com.qfedu.ioc.bean.Book" scope="prototype" init-method="init" destroy-method="destory"></bean>
+
+    <!--    根据 id-->
+    <bean id="stu2" class="com.qfedu.ioc.bean.Student" autowire="byName"></bean>
+
+<!--    根据class-->
+<!--    <bean id="stu2" class="com.qfedu.ioc.bean.Student" autowire="byType" ></bean>-->
+
+    <bean id="productService" class="com.qfedu.ioc.service.impl.ProductServiceImpl"></bean>
+    <bean id="testServlet" class="com.qfedu.ioc.servlets.TestServlet" autowire="byName"></bean>
+</beans>

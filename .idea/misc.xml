@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/maven-demo2" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot-demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-demo2" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-demo3" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm-demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/sss" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/sss/pom.xml" />
+        <option value="$PROJECT_DIR$/ttt/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/fmmall/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-demo2/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo3/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo4/pom.xml" />
+        <option value="$PROJECT_DIR$/tkmapper-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc-demo2/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc-demo3/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-aop-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-aop-demo2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-ioc-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-ioc-demo2/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-demo1/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

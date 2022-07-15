@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.MemberDAO">
+
+    <resultMap id="memberMap" type="Member">
+            <id column="member_id" property="memberId"></id>
+            <id column="member_nick" property="memberNick"></id>
+            <id column="member_gender" property="memberGender"></id>
+            <id column="member_age" property="memberAge"></id>
+            <id column="member_city" property="memberCity"></id>
+    </resultMap>
+
+    <select id="searchMember" resultMap="memberMap">
+            select member_id,member_nick,member_gender,member_age,member_city
+            from members
+            <where>
+                <if test="gender!=null">
+                    and member_gender=#{gender}
+                </if>
+                <if test="minAge!=null">
+                    and member_age &gt;= #{minage}
+                </if>
+                <if test="maxAge!=null">
+                    and member_age &lt;= #{maxage}
+                </if>
+                <if test="city!=null">
+                    and member_city=#{city}
+                </if>
+            </where>
+
+    </select>
+
+    
+    <select id="searchMemberByCity" resultMap="memberMap">
+        select member_id,member_nick,member_gender,member_age,member_city
+        from members
+        where member_city in
+        <foreach collection="list" item="cityName" separator="," open="(" close=")" >
+            #{cityName}
+        </foreach>
+    </select>
+
+    <select id="searchMemberByNick" parameterType="java.lang.String" resultMap="memberMap">
+        select member_id,member_nick,member_gender,member_age,member_city
+        from members
+        where member_nick like '%${keyWord}%'
+
+--         ${key} 先拼接参数再编译执行
+--         #{key} 先预编译再获取参数  避免sql注入问题
+    </select>
+</mapper>

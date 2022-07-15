@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+                    http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="bookDAO" class="com.qfedu.dao.BookDAOImpl"></bean>
+    <bean id="studentDAO" class="com.qfedu.dao.StudentDAOImpl"></bean>
+    <bean id="txManager" class="com.qfedu.utils.TxManager"></bean>
+    <bean id="logManager" class="com.qfedu.utils.LogManager"></bean>
+    <aop:config>
+        <aop:pointcut id="book_all" expression="execution(* com.qfedu.dao.*.*())"/>
+
+        <aop:pointcut id="book_pc1" expression="execution(* com.qfedu.dao.BookDAOImpl.*(..))"/>
+
+        <aop:pointcut id="book_pc2" expression="execution(void com.qfedu.dao.BookDAOImpl.*(..))"/>
+
+        <aop:pointcut id="3" expression="execution(* com.qfedu.dao.*.insert(..))"/>
+
+<!--  <aop:pointcut id="book_pc1" expression="execution(返回值 com.qfedu.dao.类名.方法名(参数))"/>-->
+
+        <aop:aspect ref="txManager">
+            <aop:before method="begin" pointcut-ref="book_all"></aop:before>
+            <aop:after method="commit" pointcut-ref="book_all"></aop:after>
+
+
+<!--            抛出异常执行-->
+<!--            <aop:after-throwing method=""-->
+<!--                方法执行完毕执行-->
+<!--            <aop:after-returni ng method=""-->
+        </aop:aspect>
+        
+
+    </aop:config>
+</beans>

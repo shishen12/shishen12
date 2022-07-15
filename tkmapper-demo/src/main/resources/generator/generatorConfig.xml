@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!--配置GeneralDAO-->
+       <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+           <property name="mappers" value="com.qfedu.tkmapperdemo.General.GeneralDAO"/>
+       </plugin>
+
+
+        <!--配置数据库链接-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/fmmall"
+                        userId="root"
+                        password="admin123">
+        </jdbcConnection>
+
+        <!--配置实体类存放路径-->
+        <javaModelGenerator targetPackage="com.qfedu.tkmapperdemo.beans" targetProject="src/main/java"/>
+
+        <!--配置XML存放路径-->
+        <sqlMapGenerator targetPackage="/" targetProject="src/main/resources/mappers"/>
+
+        <!--配置DAO存放路径-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.qfedu.tkmapperdemo.dao" targetProject="src/main/java"/>
+
+        <!--配置需要指定生成的数据库和表，%代表所有表-->
+        <table tableName="%">
+            <!--<generatedKey column="id" sqlStatement="Mysql"/>-->
+        </table>
+
+
+  </context>
+</generatorConfiguration>

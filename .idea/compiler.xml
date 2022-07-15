@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springmvc-demo3" />
+        <module name="demo (1) (com.example)" />
+        <module name="ssm-demo1" />
+        <module name="mapper" />
+        <module name="common (1)" />
+        <module name="demo" />
+        <module name="spring-mybatis" />
+        <module name="mybatis-demo3" />
+        <module name="mybatis-demo4" />
+        <module name="maven-demo1" />
+        <module name="mybatis-demo1" />
+        <module name="maven-demo2" />
+        <module name="common" />
+        <module name="tkmapper-demo" />
+        <module name="beans" />
+        <module name="api" />
+        <module name="spring-ioc-demo1" />
+        <module name="springmvc-demo2" />
+        <module name="spring-ioc-demo2" />
+        <module name="springboot-ssm" />
+        <module name="spring-aop-demo2" />
+        <module name="spring-aop-demo1" />
+        <module name="ttt" />
+        <module name="service" />
+        <module name="ssm-demo1 (1)" />
+        <module name="springboot-demo1" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api" target="1.5" />
+      <module name="beans" target="1.5" />
+      <module name="common" target="1.5" />
+      <module name="common (1)" target="1.5" />
+      <module name="demo" target="1.5" />
+      <module name="demo (1) (com.example)" target="1.5" />
+      <module name="fmmall" target="1.5" />
+      <module name="mapper" target="1.5" />
+      <module name="maven-demo1" target="1.5" />
+      <module name="maven-demo2" target="1.5" />
+      <module name="maven-parent" target="1.5" />
+      <module name="mybatis-demo1" target="1.5" />
+      <module name="mybatis-demo3" target="1.5" />
+      <module name="mybatis-demo4" target="1.5" />
+      <module name="service" target="1.5" />
+      <module name="spring-aop-demo1" target="1.5" />
+      <module name="spring-aop-demo2" target="1.5" />
+      <module name="spring-ioc-demo1" target="1.5" />
+      <module name="spring-ioc-demo2" target="1.5" />
+      <module name="spring-mybatis" target="1.5" />
+      <module name="springboot-demo1" target="1.5" />
+      <module name="springboot-ssm" target="1.5" />
+      <module name="springmvc-demo2" target="1.5" />
+      <module name="springmvc-demo3" target="1.5" />
+      <module name="ssm-demo1" target="1.5" />
+      <module name="ssm-demo1 (1)" target="1.5" />
+      <module name="tkmapper-demo" target="1.5" />
+      <module name="ttt" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

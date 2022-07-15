@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+                    http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="bookDAO" class="com.qfedu.dao.BookDAOImpl"></bean>
+    <bean id="studentDAO" class="com.qfedu.dao.StudentDAOImpl"></bean>
+    <bean id="txManager" class="com.qfedu.utils.TxManager"></bean>
+
+    <aop:config>
+        <aop:pointcut id="book_all" expression="execution(* com.qfedu.dao.*.*())"/>
+        <aop:aspect ref="txManager">
+            <aop:before method="begin" pointcut-ref="book_all"></aop:before>
+            <aop:after method="commit" pointcut-ref="book_all"></aop:after>
+        </aop:aspect>
+    </aop:config>
+</beans>
