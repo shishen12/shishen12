@@ -1,4 +1,4 @@
-package com.qfedu.redisdemo2;
+package com.qfedu.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

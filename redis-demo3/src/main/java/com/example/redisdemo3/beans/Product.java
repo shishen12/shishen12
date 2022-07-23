@@ -1,4 +1,4 @@
-package com.qfedu.redis.beans;
+package com.example.redisdemo3.beans;
 
 
 import lombok.AllArgsConstructor;
