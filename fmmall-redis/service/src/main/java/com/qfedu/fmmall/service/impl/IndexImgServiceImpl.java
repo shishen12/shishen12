@@ -44,9 +44,18 @@ public class IndexImgServiceImpl implements IndexImgService {
                     if(s==null){
                         //只有第一个请求再次查询redis时为null
                         indexImgs = indexImgMapper.listIndexImgs();
-                        stringRedisTemplate.boundValueOps("indexImgs").set(objectMapper.writeValueAsString(indexImgs));
-                        //设置过期时间为1天
-                        stringRedisTemplate.boundValueOps("indexImgs").expire(1, TimeUnit.DAYS);
+                        //缓存穿透
+                        if(indexImgs!=null){
+                            stringRedisTemplate.boundValueOps("indexImgs").set(objectMapper.writeValueAsString(indexImgs));
+                            //设置过期时间为1天
+                            stringRedisTemplate.boundValueOps("indexImgs").expire(1, TimeUnit.DAYS);
+                        }else {
+                            List<IndexImg> arr=new ArrayList<>();
+                            stringRedisTemplate.boundValueOps("indexImgs").set(objectMapper.writeValueAsString(arr));
+                            //设置过期时间为1天
+                            stringRedisTemplate.boundValueOps("indexImgs").expire(10, TimeUnit.SECONDS);
+                        }
+
                     }else {
                         JavaType javaType1=objectMapper.getTypeFactory().constructParametricType(ArrayList.class, IndexImg.class);
                         indexImgs=objectMapper.readValue(s,javaType1);
