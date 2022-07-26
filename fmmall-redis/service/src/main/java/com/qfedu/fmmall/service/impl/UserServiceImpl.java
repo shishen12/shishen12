@@ -1,5 +1,7 @@
 package com.qfedu.fmmall.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qfedu.fmmall.dao.ProductCommentsMapper;
 import com.qfedu.fmmall.dao.UserAddrMapper;
 import com.qfedu.fmmall.dao.UsersMapper;
@@ -20,6 +22,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
@@ -27,6 +30,7 @@ import tk.mybatis.mapper.entity.Example;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Scope("singleton")
@@ -37,6 +41,9 @@ public class UserServiceImpl implements UserService {
     private UsersMapper usersMapper;
     @Autowired
     private ProductCommentsMapper productCommentsMapper;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+    private ObjectMapper objectMapper=new ObjectMapper();
 
     @Transactional
     public ResultVO userRegist(String name, String pwd) {
@@ -92,6 +99,17 @@ public class UserServiceImpl implements UserService {
                         .setExpiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))//设置token过期时间
                         .signWith(SignatureAlgorithm.HS256, "ZHUzhu8023")//设置加密方式和加密密码
                         .compact();
+
+                        //当用户登录成功之后，以token为可以，将用户信息保存到redis
+                        String userInfo=null;
+                        try{
+                            userInfo=objectMapper.writeValueAsString(users.get(0));
+                            stringRedisTemplate.boundValueOps(token).set(userInfo,30, TimeUnit.MINUTES);
+                        }catch (JsonProcessingException e){
+                            e.printStackTrace();
+                        }
+
+
                 return new ResultVO(ResStatus.OK,token,users.get(0));
             }else{
                 return new ResultVO(ResStatus.NO,"登陆失败，密码错误！",null);
